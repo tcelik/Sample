@@ -1,33 +1,19 @@
 package org.csystem.sampleapp;
 
-import org.csystem.collection.CsdArrayList;
-
-import java.util.ArrayList;
-
 public class App {
 
     public static void main(String[] args)
     {
-        CsdArrayList cityList = new CsdArrayList();
-        cityList.add("ankara");
-        cityList.add("istanbul");
+        //Babadan kalma meşhur dizimiz ve ekrana basılması
+        int [] a = {4, 8, 3, 1, 18, 9, 21, 20, 5, 17};
+        int size = 10;
+        for (int i = 0; i < size; ++i)
+            System.out.print(a[i] + " ");
 
-        CsdArrayList numberList = new CsdArrayList();
-        numberList.add(6);
-        numberList.add(34);
-
-        CsdArrayList generalList = new CsdArrayList();
-        generalList.add(cityList);
-        generalList.add(numberList);
-
-        for (int i = 0; i < generalList.size(); ++i) {
-            CsdArrayList clist = (CsdArrayList) generalList.get(i);
-
-            for (int k = 0; k < clist.size(); ++k)
-                System.out.println(clist.get(k));
-
-        }
-
+        System.out.println();
+        //...
+        for (int i = 0; i < a.length; ++i)
+            System.out.print(a[i] + " ");
 
 
     }
