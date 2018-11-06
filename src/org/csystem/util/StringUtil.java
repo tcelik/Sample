@@ -2,15 +2,10 @@ package org.csystem.util;
 
 public class StringUtil {
 
-
-
-
-
-
-
-
-
-
+    public static boolean isPalindrome(String str)
+    {
+        return reverse(str).equals(str);
+    }
 
     //ver bana bir str, verim sana tersini methodu
     public static String reverse(String str)
@@ -47,6 +42,19 @@ public class StringUtil {
         }
 
         return result;
+    }
+
+    //harf olmayanları siliyorum. ? . ' bunlar harf değil
+    public static String removeNotLetter(String str)
+    {
+        String result = "";
+
+        for (int i = 0; i < str.length(); ++i)
+            if (Character.isLetter(str.charAt(i)))
+                result += str.charAt(i);
+
+        return result;
+
     }
 
 

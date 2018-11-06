@@ -1,29 +1,26 @@
 package org.csystem.sampleapp;
 
-import org.csystem.util.StringUtil;
+import static org.csystem.util.StringUtil.*;
+
 
 public class App {
 
     public static void main(String[] args)
     {
-        //Auto-boxing (otomatik kutulama - otomatik kutuladı - nesne yarattı bana verdi - primtiveden nesne)
-        Character c1 = 'A';
+        String str = "KİM O KOMİK??";
 
-        //KUTULAMA - BOXİNG
-        c1 = new Character('A'); //Java 9 öncesi, nesne yarat.
-        c1 = Character.valueOf('A');   //Java 9 ve sonrası, Character adresi dönecek ve set edecek private char m_elem = <your char>;
+        //Whitespace silelim
+        str = removeWS(str);
 
-        //OTOMATİK KUTULAMA - AUTO BOXİNG
-        Integer i1 = 2;
-        Double d1 = 1.0;
+        //Remove harf olmayanları
+        str = removeNotLetter(str);
 
-        //UNBOXİNG
-        Character chA = 'A';
-        Character chB = 'B';
+        System.out.println(isPalindrome(str));
 
-        //AUTO UNBOXİNG, charValue çağırıyor nasıl toString çağırıyorsa. Ara koda o bilgiyle yazılıyor.
-        char cha = chA;
-        char chb = chB;
+        //uzun hali
+        System.out.println(isPalindrome(removeNotLetter(removeWS(str))));
+
+        //import staticli hali daha şık
 
     }
 }
