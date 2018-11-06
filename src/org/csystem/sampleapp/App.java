@@ -12,9 +12,10 @@ public class App {
         int bsize = 10;
 
         //çift olanları b dizisine alalım
+        int index = 0;
         for (int i = 0; i < asize; ++i)
             if (a[i] % 2 == 0)
-                b[i] = a[i];
+                b[index++] = a[i];
 
         //...
         for (int i = 0; i < b.length; ++i)
