@@ -14,15 +14,9 @@ public class App {
         //Dinamik olarak eklendi.
         for (int i = 0; i < 100; ++i)
             list1.add(i);
+;
 
-        //Dinamik olarak eklendi.
-        for (int i = 0; i < 100; ++i)
-            list1.add(i);
-
-
-        //Dinamik olarak eklendi.
-        for (int i = 0; i < 100; ++i)
-            System.out.println(list1.get(i));
+        System.out.println(list1);
 
 
 

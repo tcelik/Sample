@@ -1,14 +1,18 @@
 package org.csystem.collection;
 
 
+import java.util.Arrays;
+
 public class CsdArrayList {
+    //Data field
     private static final int DEFAULT_CAPACİTY = 10;
-    private Object [] m_elems;
+    private Object[] m_elems;
     private int m_index = 0;
 
+    //Private area
     private void allocateCapacity(int capacity)
     {
-        Object [] temp = new Object[capacity];
+        Object[] temp = new Object[capacity];
 
         for (int i = 0; i < m_elems.length; ++i)
             temp[i] = m_elems[i];
@@ -16,6 +20,7 @@ public class CsdArrayList {
         m_elems = temp;
     }
 
+    //Başlangıç
     public CsdArrayList()
     {
         this(DEFAULT_CAPACİTY);
@@ -34,6 +39,8 @@ public class CsdArrayList {
         m_elems = new Object[initialCapacity];
     }
 
+
+    //Public area - ascending order
     public void add(Object elem)
     {
 
@@ -50,6 +57,7 @@ public class CsdArrayList {
         //TODO:
     }
 
+
     public void clear()
     {
         for (int i = 0; i < m_index; ++i)
@@ -57,6 +65,12 @@ public class CsdArrayList {
 
         //unutma
         m_index = 0; //0 a ekleme yapıcam.
+    }
+
+    public int capacity()
+    {
+        //bu dizinin uzunluğu içerisinde kaç tane eleman tutabileceği bilgisi (capacitysi aslında)
+        return m_elems.length;
     }
 
 
@@ -71,9 +85,42 @@ public class CsdArrayList {
         return m_elems[index];
     }
 
+    //şu indextekini silmek istiyorum
+    public Object remove(int index)
+    {
+        //TODO:
+        return null;
+    }
+
+    //şu indextekini şununla değiştirmek değişmişi dönmek
+    public Object set(int index, Object obj)
+    {
+        //TODO:
+        return null;
+    }
+
     //Returns the number of elements in this list.(javadoc)
     public int size()
     {
         return m_index;
+    }
+
+    public void trimToSize()
+    {
+        allocateCapacity(m_index == 0 ? DEFAULT_CAPACİTY :m_index);
+    }
+
+    //Listenin elemanları arasında virgül koyarak göstermek printMessage
+    public String toString()
+    {
+        String result = "";
+
+        for (int i = 0; i < m_index; ++i) {
+            if (!result.isEmpty())
+                result += ",";
+            result += m_elems[i].toString();
+        }
+
+        return result;
     }
 }
