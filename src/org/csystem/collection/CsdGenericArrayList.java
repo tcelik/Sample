@@ -9,6 +9,7 @@ public class CsdGenericArrayList<E> {
 
     private void allocateCapacity(int capacity)
     {
+        //burası değişik object dizisi alınıyormuş.
         E [] temp = (E[]) new Object[capacity];
 
         int index = 0;
