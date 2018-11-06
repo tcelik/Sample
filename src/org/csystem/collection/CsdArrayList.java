@@ -44,6 +44,22 @@ public class CsdArrayList {
         m_elems[m_index++] = elem;
 
     }
+
+    public void add(int index, Object obj)
+    {
+        //TODO:
+    }
+
+    public void clear()
+    {
+        for (int i = 0; i < m_index; ++i)
+            m_elems[i] = null;
+
+        //unutma
+        m_index = 0; //0 a ekleme yapıcam.
+    }
+
+
     //Ver bana bir index o indexteki nesneyi verim.
     public Object get(int index)
     {
