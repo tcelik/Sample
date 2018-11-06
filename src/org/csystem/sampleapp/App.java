@@ -1,45 +1,22 @@
 package org.csystem.sampleapp;
 
-import org.csystem.collection.CsdArrayList;
-
-import java.util.ArrayList;
-
-import static org.csystem.util.StringUtil.*;
-
+import org.csystem.collection.CsdGenericArrayList;
 
 public class App {
 
     public static void main(String[] args)
     {
+        CsdGenericArrayList<String> stringCsdGenericArrayList = new CsdGenericArrayList<>();
+        stringCsdGenericArrayList.add("ankara");
+        stringCsdGenericArrayList.add("istanbul");
 
 
+        //Doğrudan atama yapabildim. Object dönmedi E döndü yani String döndü.
+        String str = stringCsdGenericArrayList.get(0);
 
-
-
-        CsdArrayList palindromeList = new CsdArrayList();
-        palindromeList.add("Kim O KOMİK?");
-        palindromeList.add("AÇ RIFAT’A FIRÇA");
-        palindromeList.add("NALAN ABLA, KETEN ETEK AL BANA LAN");
-        palindromeList.add("NE? MENEMEN!");
-        palindromeList.add("YOKSA...AS, KOY");
-        palindromeList.add("Tabiki değil");
-
-        String fmt = "Str:%s - isPalindrome:%b%n";
-
-        //iterable değil.
-        for (int i = 0; i < palindromeList.size(); ++i) {
-            String str = (String) palindromeList.get(i);
-            System.out.printf(fmt, str, isPalindrome(removeNotLetter(removeWS(str))));
-        }
-
-        System.out.println("***");
-
-        //iterable değil.
-        for (int i = 0; i < palindromeList.size(); ++i) {
-            String str = (String) palindromeList.get(i);
-            System.out.printf(fmt, str, isPalindromeWithoutWS(str));
-        }
-
-
+        for (int i = 0; i < stringCsdGenericArrayList.size(); ++i)
+            System.out.println(stringCsdGenericArrayList.get(i));
     }
 }
+
+

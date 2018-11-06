@@ -53,7 +53,7 @@ public class StringUtil {
         return result;
     }
 
-    //harf olmayanları siliyorum. ? . ' bunlar harf değil
+    //harf olmayanları siliyorum. ? . ' bunlar harf değil ve resultstr dönüyorum
     public static String removeNotLetter(String str)
     {
         String result = "";
