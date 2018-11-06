@@ -1,20 +1,27 @@
 package org.csystem.collection;
 
-//Dinamik olarak büyüyen bir dizi
+
 public class CsdArrayList {
-    //1.Default kapasite
     private static final int DEFAULT_CAPACİTY = 10;
+    private Object [] m_elems;
+    private int m_index = 0;
 
-    //2. Object dizisi alınır
-    private Object [] m_elems; //elemanlar bu dizide tutulucak.
+    private void allocateCapacity(int capacity)
+    {
+        Object [] temp = new Object[capacity];
 
-    //3. Argüman verilmesse default kapasite 10 olsun
+        for (int i = 0; i < m_elems.length; ++i)
+            temp[i] = m_elems[i];
+
+        m_elems = temp;
+    }
+
     public CsdArrayList()
     {
         this(DEFAULT_CAPACİTY);
     }
 
-    //4. Argüman verilirse
+
     public CsdArrayList(int initialCapacity)
     {
         //...
@@ -24,8 +31,28 @@ public class CsdArrayList {
             System.exit(-1);
         }
 
-        //init kadar bir yer ayrılır.
         m_elems = new Object[initialCapacity];
+    }
+
+    //Ver bana bir nesne onu listeye(diziye) eklemek
+    public void add(Object elem)
+    {
+
+
+        //10'luk bir dizi üzerinden düşünmek, index = 9 iken eklenebilir ama index = 10(length) olduğunda eklenmemesi gerekir.
+        if (m_index == m_elems.length) {
+            allocateCapacity(m_elems.length * 2);
+        }
+
+        m_elems[m_index++] = elem;
+
+    }
+
+
+
+    public int size()
+    {
+        return m_index;
     }
 
 }
