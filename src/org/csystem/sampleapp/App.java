@@ -6,15 +6,19 @@ public class App {
     {
         //Babadan kalma meşhur dizimiz ve ekrana basılması
         int [] a = {4, 8, 3, 1, 18, 9, 21, 20, 5, 17};
-        int size = 10;
-        for (int i = 0; i < size; ++i)
-            System.out.print(a[i] + " ");
+        int asize = 10;
 
-        System.out.println();
+        int [] b = new int[asize];
+        int bsize = 10;
+
+        //çift olanları b dizisine alalım
+        for (int i = 0; i < asize; ++i)
+            if (a[i] % 2 == 0)
+                b[i] = a[i];
+
         //...
-        for (int i = 0; i < a.length; ++i)
-            System.out.print(a[i] + " ");
-
+        for (int i = 0; i < b.length; ++i)
+            System.out.print(b[i] + " ");
 
     }
 }
