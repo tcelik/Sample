@@ -1,5 +1,7 @@
 package org.csystem.sampleapp;
 
+import java.util.ArrayList;
+
 import static org.csystem.util.StringUtil.*;
 
 
@@ -7,20 +9,17 @@ public class App {
 
     public static void main(String[] args)
     {
-        String str = "KİM O KOMİK??";
+        ArrayList<String> palindromeList = new ArrayList<>();
+        palindromeList.add("Kim O KOMİK?");
+        palindromeList.add("AÇ RIFAT’A FIRÇA");
+        palindromeList.add("NALAN ABLA, KETEN ETEK AL BANA LAN");
+        palindromeList.add("NE? MENEMEN!");
+        palindromeList.add("YOKSA...AS, KOY");
+        palindromeList.add("Tabiki değil");
 
-        //Whitespace silelim
-        str = removeWS(str);
-
-        //Remove harf olmayanları
-        str = removeNotLetter(str);
-
-        System.out.println(isPalindrome(str));
-
-        //uzun hali
-        System.out.println(isPalindrome(removeNotLetter(removeWS(str))));
-
-        //import staticli hali daha şık
+        String fmt = "Str:%s - isPalindrome:%b%n";
+        for (String str : palindromeList)
+            System.out.printf(fmt, str, isPalindrome(removeNotLetter(removeWS(str))));
 
     }
 }

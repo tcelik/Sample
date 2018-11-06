@@ -4,7 +4,7 @@ public class StringUtil {
 
     public static boolean isPalindrome(String str)
     {
-        return reverse(str).equals(str);
+        return reverse(str).equalsIgnoreCase(str);
     }
 
     //ver bana bir str, verim sana tersini methodu
