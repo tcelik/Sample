@@ -2,7 +2,9 @@ package org.csystem.collection;
 // 1. Derleyici kontrol etsin E türünden girilmesse hata versin.
 // 2. Bana object türünden vermesin, E türünden versin. Casting yapmak zorunda kalmim.
 
-public class CsdGenericArrayList<E> {
+import java.util.Iterator;
+
+public class CsdGenericArrayList<E> implements Iterable<E>{
     private static final int DEFAULT_CAPACITY = 10;
     private E [] m_elems;
     private int m_index;
@@ -55,7 +57,22 @@ public class CsdGenericArrayList<E> {
     }
 
 
+    @Override
+    public Iterator<E> iterator()
+    {
+        return new Iterator<E>() {
+            private int m_index = 0;
+            @Override
+            public boolean hasNext()
+            {
+                return m_index < size();
+            }
 
-
-
+            @Override
+            public E next()
+            {
+                return m_elems[m_index++];
+            }
+        };
+    }
 }
