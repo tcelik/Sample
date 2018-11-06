@@ -20,6 +20,7 @@ public class CsdArrayList {
         //...
         if (initialCapacity < 0) {
             System.out.println("IllegalArgumentException");
+            System.out.println("Processi sonlandırıyorum");
             System.exit(-1);
         }
 

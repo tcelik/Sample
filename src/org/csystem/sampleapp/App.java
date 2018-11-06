@@ -1,46 +1,48 @@
 package org.csystem.sampleapp;
 
+import org.csystem.collection.CsdArrayList;
+
 import java.util.ArrayList;
 
 public class App {
 
     public static void main(String[] args)
     {
-        //Dinamik olmayan ama herşeyi tutabilen genel bir object dizisi
-        Object [] elems = new Object[10];
+        //10 kapasiteli bir dizi aslında
+        CsdArrayList list1 = new CsdArrayList();
 
-        for (int i = 0; i < 5; i++) {
-            elems[i] = String.valueOf("ankara");
+        //init kapasiteli bir dizi aslında
+        CsdArrayList list2 = new CsdArrayList(20);
+
+        //init kapasiteli bir dizi aslında
+        //CsdArrayList list3 = new CsdArrayList(-1); process finished
+
+
+        //Aşağıdan yukarıya doğrudan atama yapılabilir. "String extends Object"
+        Object o = "string atayabilirim."; // o = (Object) new String("string atayabilirim");, implicit casting.
+
+        //Yukarıdan aşağıda doğrudan atama yok, isternirse casting,static türü Object(o nesnesinin)
+        //String str =  o;
+
+
+        o = 2; //o'nun gösterdiği yeri new Integer(2), Integer.valueof(2) ile değiştirdim
+        //class cast exception mantığı, sen explicit olarak cast ettin.
+        try {
+            String str = ((String) o);
+            System.out.println(str); //burası atlanıcak
+
+        }
+        catch (Throwable ex) {
+            System.out.println(ex.getMessage());
         }
 
-        for (int i = 5; i < 10; i++) {
-            elems[i] = Integer.valueOf(i);
-        }
+        String str = ((String) o);
 
-        for (int i = 0; i < elems.length; i++) {
-            System.out.println(elems[i]);
-        }
+        //o.toString(), aslında eğer varsa dinamik türün(new String) toString çağrılır.
+        System.out.println(o);
 
-
-        //...atamamassın
-        //elems[10] = "istanbul";
-
-        //...napman lazım
-        Object [] temp = new Object[20];
-
-        //kopyalama yapma ihtiyacı, yani bir ihtiyacım var ben eklim o kendi arka planda kopyalamadır o ilgilensin bu bilgiler benden abstract olsun, gereksiz bilgi vermesin
-        for (int i = 0; i < elems.length; ++i) {
-            temp[i] = elems[i];
-        }
-
-        //temp[10] = "istanbul";
-        elems = temp; //copy
-        elems[10] = "istanbul";
-
-        for (int i = 0; i < elems.length; ++i) {
-            System.out.println(elems[i]);
-        }
-
-
+        //list1.add(<something1 nesne - Herhangi bir sınıf nesnesi olabilir, s extends Object aslında>);
+        //list1.add(<something2 nesne - string eklersem new String gibi>);
+        //list1.add("something3 nesne - int eklersem oto boxing yapacak");
     }
 }
