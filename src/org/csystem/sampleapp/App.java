@@ -1,27 +1,29 @@
 package org.csystem.sampleapp;
 
+import org.csystem.util.StringUtil;
+
 public class App {
 
     public static void main(String[] args)
     {
-        //İfade: Değişkenlerin, operatörlerin, sabitlerin, ayraçların oluşturduğu birliktelik
-        int a;
-        a = 5;
-        System.out.println("<ifade>");
-        System.out.println(a = 10);
+        //Auto-boxing (otomatik kutulama - otomatik kutuladı - nesne yarattı bana verdi - primtiveden nesne)
+        Character c1 = 'A';
 
-        //...
-        a = foo(1) + 3;
+        //KUTULAMA - BOXİNG
+        c1 = new Character('A'); //Java 9 öncesi, nesne yarat.
+        c1 = Character.valueOf('A');   //Java 9 ve sonrası, Character adresi dönecek ve set edecek private char m_elem = <your char>;
 
-        foo(foo(1) + 3);
+        //OTOMATİK KUTULAMA - AUTO BOXİNG
+        Integer i1 = 2;
+        Double d1 = 1.0;
 
-        //foo(<a ya atanacak ifade bekliyor>)
+        //UNBOXİNG
+        Character chA = 'A';
+        Character chB = 'B';
 
-        int c = 0;
-        int d = c = 5, b = 10;
-        System.out.println(d);
+        //AUTO UNBOXİNG, charValue çağırıyor nasıl toString çağırıyorsa. Ara koda o bilgiyle yazılıyor.
+        char cha = chA;
+        char chb = chB;
 
     }
-
-    public static int foo(int a) {return 1;}
 }
