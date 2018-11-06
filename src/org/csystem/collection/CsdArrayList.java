@@ -34,12 +34,9 @@ public class CsdArrayList {
         m_elems = new Object[initialCapacity];
     }
 
-    //Ver bana bir nesne onu listeye(diziye) eklemek
     public void add(Object elem)
     {
 
-
-        //10'luk bir dizi üzerinden düşünmek, index = 9 iken eklenebilir ama index = 10(length) olduğunda eklenmemesi gerekir.
         if (m_index == m_elems.length) {
             allocateCapacity(m_elems.length * 2);
         }
@@ -48,11 +45,9 @@ public class CsdArrayList {
 
     }
 
-
-
+    //Returns the number of elements in this list.(javadoc)
     public int size()
     {
         return m_index;
     }
-
 }

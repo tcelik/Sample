@@ -8,6 +8,17 @@ public class App {
 
     public static void main(String[] args)
     {
+        //10 capacity bir dizi oluştu.
+        CsdArrayList list1 = new CsdArrayList();
+
+        //Dinamik olarak eklendi.
+        for (int i = 0; i < 100; ++i)
+            list1.add(i);
+
+        //kaç tane eleman var.
+        System.out.println(list1.size());
+
+
 
     }
 }
