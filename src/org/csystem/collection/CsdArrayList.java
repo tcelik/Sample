@@ -121,6 +121,6 @@ public class CsdArrayList {
             result += m_elems[i].toString();
         }
 
-        return result;
+        return "[" + result + "]";
     }
 }
