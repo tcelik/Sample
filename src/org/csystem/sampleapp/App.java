@@ -11,6 +11,11 @@ public class App {
 
     public static void main(String[] args)
     {
+
+
+
+
+
         CsdArrayList palindromeList = new CsdArrayList();
         palindromeList.add("Kim O KOMİK?");
         palindromeList.add("AÇ RIFAT’A FIRÇA");
@@ -25,6 +30,14 @@ public class App {
         for (int i = 0; i < palindromeList.size(); ++i) {
             String str = (String) palindromeList.get(i);
             System.out.printf(fmt, str, isPalindrome(removeNotLetter(removeWS(str))));
+        }
+
+        System.out.println("***");
+
+        //iterable değil.
+        for (int i = 0; i < palindromeList.size(); ++i) {
+            String str = (String) palindromeList.get(i);
+            System.out.printf(fmt, str, isPalindromeWithoutWS(str));
         }
 
 

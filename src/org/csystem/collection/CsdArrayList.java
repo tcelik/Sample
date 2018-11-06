@@ -60,8 +60,13 @@ public class CsdArrayList {
 
     public void clear()
     {
+        /*
         for (int i = 0; i < m_index; ++i)
-            m_elems[i] = null;
+            m_elems[i] = null;*/
+
+        //m_elems(dizi) iterable aslında. Diziler iterable
+        for (Object o : m_elems)
+            o = null;
 
         //unutma
         m_index = 0; //0 a ekleme yapıcam.
@@ -123,4 +128,5 @@ public class CsdArrayList {
 
         return "[" + result + "]";
     }
+
 }

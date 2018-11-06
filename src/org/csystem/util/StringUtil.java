@@ -7,6 +7,15 @@ public class StringUtil {
         return reverse(str).equalsIgnoreCase(str);
     }
 
+    public static boolean isPalindromeWithWS(String str)
+    {
+        return reverse(str).equals(str);
+    }
+
+    public static boolean isPalindromeWithoutWS(String str)
+    {
+        return isPalindromeWithWS(removeWS(str));
+    }
     //ver bana bir str, verim sana tersini methodu
     public static String reverse(String str)
     {
