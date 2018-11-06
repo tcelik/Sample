@@ -44,6 +44,16 @@ public class CsdArrayList {
         m_elems[m_index++] = elem;
 
     }
+    //Ver bana bir index o indexteki nesneyi verim.
+    public Object get(int index)
+    {
+        //...
+        if (index < 0 || index >= m_index) {
+            System.out.println("IndexOutOfBoundsException");
+            System.exit(-1); //exception konusu burada olmasın şimdilik.
+        }
+        return m_elems[index];
+    }
 
     //Returns the number of elements in this list.(javadoc)
     public int size()
