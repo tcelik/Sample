@@ -4,22 +4,24 @@ public class App {
 
     public static void main(String[] args)
     {
-        //Babadan kalma meşhur dizimiz ve ekrana basılması
-        int [] a = {4, 8, 3, 1, 18, 9, 21, 20, 5, 17};
-        int asize = 10;
-
-        int [] b = new int[asize];
-        int bsize = 10;
-
-        //çift olanları b dizisine alalım
-        int index = 0;
-        for (int i = 0; i < asize; ++i)
-            if (a[i] % 2 == 0)
-                b[index++] = a[i];
+        //İfade: Değişkenlerin, operatörlerin, sabitlerin, ayraçların oluşturduğu birliktelik
+        int a;
+        a = 5;
+        System.out.println("<ifade>");
+        System.out.println(a = 10);
 
         //...
-        for (int i = 0; i < b.length; ++i)
-            System.out.print(b[i] + " ");
+        a = foo(1) + 3;
+
+        foo(foo(1) + 3);
+
+        //foo(<a ya atanacak ifade bekliyor>)
+
+        int c = 0;
+        int d = c = 5, b = 10;
+        System.out.println(d);
 
     }
+
+    public static int foo(int a) {return 1;}
 }
