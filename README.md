@@ -1,2 +1,3 @@
 # Sample (Örnek Sınıflar, Örneğin Kendi ArrayList sınıfımızı yazıyoruz vb.)
-Java SE -> C ve Sistem Programcıları Derneğinde Yazılan Kütüphaneler, Sınıflar, Örnekler Üzerine
+
+1. İncelemek isterseniz, İntelliJ IDEA idesiyle açabilirsiniz, indirip open project seçeneği işinizi görecektir.
